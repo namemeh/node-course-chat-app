@@ -4,10 +4,12 @@ const express  = require('express');
 const socketIO = require('socket.io');
 
 const publicPath = path.join(__dirname,'../public');
+
+const {generateMessage} = require('./utils/message');
 console.log("start app server.js");
 // console.log(__dirname + '/../public');
 // console.log(publicPath);
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3036;
 var app = express();
 var server = http.createServer(app);
 
@@ -20,17 +22,8 @@ app.use(express.static(publicPath));
 
 io.on('connection',(socket)=>{
     console.log('New user connected');
-    socket.emit('newMessage', {
-        from: "Administrator",
-        text: "Welcome to the Chat app!",
-        createdAt: new Date().getTime(),
-    });
-    socket.broadcast.emit('newMessage', {
-        from: "Administrator",
-        text: "New user joined",
-        created: new Date().getTime()
-    });
-
+    socket.emit('newMessage',generateMessage("Administrator","Welcome to the Chat app!"));
+    socket.broadcast.emit('newMessage', generateMessage('Administrator',"New user joined"));
 /*
     socket.emit('newEmail',{
         from: 'mike@example.com',
@@ -55,11 +48,7 @@ io.on('connection',(socket)=>{
 socket.on('createMessage', (message) => {
     console.log('createMessage is ', message);
     // io.emit emitts to every single connection
-     io.emit('newMessage', {
-        from: message.from,
-        text: message.text,
-       createdt: new Date().getTime()
-     });
+     io.emit('newMessage', generateMessage(message.from,message.text));
 
 // send to everybody excpet one that created message
 //    socket.broadcast.emit('newMessage', {
