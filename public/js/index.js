@@ -8,10 +8,13 @@ socket.on('connect', ()=> {
         text: 'Di si!',
     });
     */
+
+/*
 socket.emit('createMessage',{
     from: 'Andrew',
     text: 'Yup,that works for me!',
 });
+*/
 });
 
 

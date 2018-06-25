@@ -7,7 +7,7 @@ const publicPath = path.join(__dirname,'../public');
 console.log("start app server.js");
 // console.log(__dirname + '/../public');
 // console.log(publicPath);
-const port = process.env.PORT || 3020;
+const port = process.env.PORT || 3025;
 var app = express();
 var server = http.createServer(app);
 
@@ -33,15 +33,23 @@ io.on('connection',(socket)=>{
     });
 
     */
-socket.emit('newMessage',{
+// emmitts event to single connection
+/*socket.emit('newMessage',{
     from: 'Jhon',
     text: 'See you then',
     createdAt: 123
 });
+*/
 
 
-socket.on('createMessage', (data) => {
-    console.log('createMessage is ', data);
+socket.on('createMessage', (message) => {
+    console.log('createMessage is ', message);
+    // emitts to every single connection
+    io.emit('newMessage', {
+        from: message.from,
+        text: message.text,
+        createdt: new Date().getTime()
+    });
 });
 
 
