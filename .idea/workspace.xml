@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67865cd4-8141-4ace-8d46-e5d3a43f7009" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,11 +97,6 @@
               <item name="node-chat-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-chat-app" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="node-chat-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -143,12 +138,12 @@
       <option name="presentableId" value="Default" />
       <updated>1529671667266</updated>
       <workItem from="1529671668426" duration="454000" />
-      <workItem from="1529908779784" duration="2635000" />
+      <workItem from="1529908779784" duration="3018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3089000" />
+    <option name="totallyTimeSpent" value="3472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1971" y="-4" width="1869" height="1084" extended-state="6" />
