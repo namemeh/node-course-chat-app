@@ -9,7 +9,7 @@ const {generateMessage} = require('./utils/message');
 console.log("start app server.js");
 // console.log(__dirname + '/../public');
 // console.log(publicPath);
-const port = process.env.PORT || 3036;
+const port = process.env.PORT || 3039;
 var app = express();
 var server = http.createServer(app);
 
@@ -45,10 +45,11 @@ io.on('connection',(socket)=>{
 });
 */
 
-socket.on('createMessage', (message) => {
+socket.on('createMessage', (message,callback) => {
     console.log('createMessage is ', message);
     // io.emit emitts to every single connection
      io.emit('newMessage', generateMessage(message.from,message.text));
+     callback('This is from server');
 
 // send to everybody excpet one that created message
 //    socket.broadcast.emit('newMessage', {
